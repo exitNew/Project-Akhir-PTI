@@ -1,0 +1,26 @@
+<div class="py-5" ng-controller="detailsController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <img class="img-fluid" ng-src="https://image.tmdb.org/t/p/w300{{detail.poster_path}}" width="300px" height="450">
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 id="movieTitle" class="card-title text-left"><b>{{detail.original_title}} </b><i style="font-size: 24px">{{detail.release_date}}</i></h1>
+                        <h4 class="card-subtitle my-2 text-muted text-left">Overview</h4>
+                        <p class="card-text text-left">{{detail.overview}}</p>
+                        <h4 class="card-text text-left"><b>Budget:</b> {{detail.budget}}</h4>
+                        <table class="card-text text-left" ng-repeat="(key, list) in detail">
+                            <tbody ng-repeat="(key2, point) in list">
+                                <tr>
+                                    <td>{{point.name}}</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

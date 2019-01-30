@@ -1,0 +1,29 @@
+<div class="container text-center my-5" ng-controller="mainController">
+    <div class="text-center text-light">
+        <h2>Now Playing</h2>
+    </div>
+    <table class="table text-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Images</th>   
+                <th scope="col">Movie Title</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="(key, movie) in movies | orderBy: original_title">
+            <tr ng-repeat="(key1, list) in movie track by $index">
+                <td scope="row" id="movieTitle{{$index}}">{{list.id}}</td>
+                <td>
+                    <img class="img-fluid" ng-src="https://image.tmdb.org/t/p/w92/{{list.poster_path}}" >
+                </td>
+                <td>{{list.original_title}}</td>
+                <td>{{list.release_date}}</td>
+                <td>
+                    <a id="btn-details" class="btn" href="/details">Details</a>
+                </td>
+            </tr>    
+        </tbody>
+    </table>
+</div>

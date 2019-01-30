@@ -1,1 +1,5 @@
-made by me
+made by me.
+
+Single page
+Responsive web
+API
